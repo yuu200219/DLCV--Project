@@ -14,13 +14,13 @@ In this project, we will focus on model training with Cityscapes dataset (Pascal
 
 As a variant of Fast R-CNN, the introduction of the Region Proposal Network (RPN) eliminates the need for selective search in specific areas of the feature map, instead performing anchor prediction.
 
-![Untitled](Project_1%20Report%203879b77c10c44de39534d30921ce429f/Untitled.png)
+![Untitled](md_img/Untitled1.png)
 
 Following is the explanation about RPN and RoI Pooling.
 
 - **RPN**
     
-    ![Untitled](Project_1%20Report%203879b77c10c44de39534d30921ce429f/Untitled%201.png)
+    ![Untitled](md_img/Untitled2.png)
     
     - Initially, for each point on the feature map, 9 anchors (K=9) with different aspect ratios and scales are generated. Thus, the entire image will have width * height * K anchors. These anchors are then fed into the Region Proposal Network (RPN) for anchor prediction. This is done by applying a sliding window (a 3x3 convolutional filter) to each position on the feature map, computing the necessary predictions for each anchor at every location.
     - 會分成 classification 和 regression
@@ -45,7 +45,7 @@ Following is the explanation about RPN and RoI Pooling.
 
 - ResNet50
     
-    ![[ResNet50_From_Scratch_Tensorflow | This repository implements the basic building blocks of Deep Residual networks which is trained on SIGNS dataset to detect numbers on hand images (jananisbabu.github.io)](https://jananisbabu.github.io/ResNet50_From_Scratch_Tensorflow/)](Project_1%20Report%203879b77c10c44de39534d30921ce429f/c3a79869-3870-4a52-aa89-e95bfce3be48.png)
+    ![[ResNet50_From_Scratch_Tensorflow | This repository implements the basic building blocks of Deep Residual networks which is trained on SIGNS dataset to detect numbers on hand images (jananisbabu.github.io)](https://jananisbabu.github.io/ResNet50_From_Scratch_Tensorflow/)](md_img/c3a79869-3870-4a52-aa89-e95bfce3be48.png)
     
     [ResNet50_From_Scratch_Tensorflow | This repository implements the basic building blocks of Deep Residual networks which is trained on SIGNS dataset to detect numbers on hand images (jananisbabu.github.io)](https://jananisbabu.github.io/ResNet50_From_Scratch_Tensorflow/)
     
@@ -232,19 +232,19 @@ wandb.init(
 
 ### Visualization of training process
 
-![W&B Chart 4_5_2024, 12_26_45 PM.png](Project_1%20Report%203879b77c10c44de39534d30921ce429f/WB_Chart_4_5_2024_12_26_45_PM.png)
+![W&B Chart 4_5_2024, 12_26_45 PM.png](md_img/WB_Chart_4_5_2024_12_26_45_PM.png)
 
-![W&B Chart 4_5_2024, 12_27_17 PM.png](Project_1%20Report%203879b77c10c44de39534d30921ce429f/WB_Chart_4_5_2024_12_27_17_PM.png)
+![W&B Chart 4_5_2024, 12_27_17 PM.png](md_img/WB_Chart_4_5_2024_12_27_17_PM.png)
 
-![W&B Chart 4_5_2024, 12_27_32 PM.png](Project_1%20Report%203879b77c10c44de39534d30921ce429f/WB_Chart_4_5_2024_12_27_32_PM.png)
+![W&B Chart 4_5_2024, 12_27_32 PM.png](md_img/WB_Chart_4_5_2024_12_27_32_PM.png)
 
-![W&B Chart 4_5_2024, 12_27_42 PM.png](Project_1%20Report%203879b77c10c44de39534d30921ce429f/WB_Chart_4_5_2024_12_27_42_PM.png)
+![W&B Chart 4_5_2024, 12_27_42 PM.png](md_img/WB_Chart_4_5_2024_12_27_42_PM.png)
 
-![W&B Chart 4_5_2024, 12_27_53 PM.png](Project_1%20Report%203879b77c10c44de39534d30921ce429f/WB_Chart_4_5_2024_12_27_53_PM.png)
+![W&B Chart 4_5_2024, 12_27_53 PM.png](md_img/WB_Chart_4_5_2024_12_27_53_PM.png)
 
-![W&B Chart 4_5_2024, 12_28_03 PM.png](Project_1%20Report%203879b77c10c44de39534d30921ce429f/WB_Chart_4_5_2024_12_28_03_PM.png)
+![W&B Chart 4_5_2024, 12_28_03 PM.png](md_img/WB_Chart_4_5_2024_12_28_03_PM.png)
 
-![W&B Chart 4_5_2024, 12_28_16 PM.png](Project_1%20Report%203879b77c10c44de39534d30921ce429f/WB_Chart_4_5_2024_12_28_16_PM.png)
+![W&B Chart 4_5_2024, 12_28_16 PM.png](md_img/WB_Chart_4_5_2024_12_28_16_PM.png)
 
 ### Summary
 
