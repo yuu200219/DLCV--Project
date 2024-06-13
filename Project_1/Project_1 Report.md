@@ -14,13 +14,13 @@ In this project, we will focus on model training with Cityscapes dataset (Pascal
 
 As a variant of Fast R-CNN, the introduction of the Region Proposal Network (RPN) eliminates the need for selective search in specific areas of the feature map, instead performing anchor prediction.
 
-![Untitled](md_img/Untitled1.png)
+![Untitled](md_img/Untitled.png)
 
 Following is the explanation about RPN and RoI Pooling.
 
 - **RPN**
     
-    ![Untitled](md_img/Untitled2.png)
+    ![Untitled](md_img/Untitled1.png)
     
     - Initially, for each point on the feature map, 9 anchors (K=9) with different aspect ratios and scales are generated. Thus, the entire image will have width * height * K anchors. These anchors are then fed into the Region Proposal Network (RPN) for anchor prediction. This is done by applying a sliding window (a 3x3 convolutional filter) to each position on the feature map, computing the necessary predictions for each anchor at every location.
     - 會分成 classification 和 regression
@@ -45,9 +45,7 @@ Following is the explanation about RPN and RoI Pooling.
 
 - ResNet50
     
-    ![[ResNet50_From_Scratch_Tensorflow | This repository implements the basic building blocks of Deep Residual networks which is trained on SIGNS dataset to detect numbers on hand images (jananisbabu.github.io)](https://jananisbabu.github.io/ResNet50_From_Scratch_Tensorflow/)](md_img/c3a79869-3870-4a52-aa89-e95bfce3be48.png)
-    
-    [ResNet50_From_Scratch_Tensorflow | This repository implements the basic building blocks of Deep Residual networks which is trained on SIGNS dataset to detect numbers on hand images (jananisbabu.github.io)](https://jananisbabu.github.io/ResNet50_From_Scratch_Tensorflow/)
+    ![Untitled](md_img/Untitled3.png)
     
     - Basic Idea
         
@@ -59,7 +57,7 @@ Following is the explanation about RPN and RoI Pooling.
         
     - Bottleneck
         
-        ![[1512.03385.pdf (arxiv.org)](https://arxiv.org/pdf/1512.03385.pdf)](Project_1%20Report%203879b77c10c44de39534d30921ce429f/Untitled%203.png)
+        ![[1512.03385.pdf (arxiv.org)](https://arxiv.org/pdf/1512.03385.pdf)](md_img/Untitled3)
         
         [1512.03385.pdf (arxiv.org)](https://arxiv.org/pdf/1512.03385.pdf)
         
@@ -69,7 +67,7 @@ Following is the explanation about RPN and RoI Pooling.
         
 - VGG16
     
-    ![[VGG-16 | CNN model for Classification and Detection - All about Machine Learning (techcraft.org)](https://blog.techcraft.org/vgg-16-cnn-model-for-classification-and-detection/)](Project_1%20Report%203879b77c10c44de39534d30921ce429f/Untitled%204.png)
+    ![[VGG-16 | CNN model for Classification and Detection - All about Machine Learning (techcraft.org)](https://blog.techcraft.org/vgg-16-cnn-model-for-classification-and-detection/)](md_img/Untitled4.png)
     
     [VGG-16 | CNN model for Classification and Detection - All about Machine Learning (techcraft.org)](https://blog.techcraft.org/vgg-16-cnn-model-for-classification-and-detection/)
     
@@ -261,7 +259,7 @@ Several observations can be made:
     - For categories such as train, bus, and truck, the AP performance is poor.
     - Specifically, the AP for the train category is very low, likely due to the small number of train instances in the dataset. Conversely, the AP for cars is very high, indicating that cars appear frequently in the dataset. Overall, ResNet50 demonstrates significantly better AP across categories compared to VGG16.
         
-        ![Untitled](Project_1%20Report%203879b77c10c44de39534d30921ce429f/Untitled%205.png)
+        ![Untitled](md_img/Untitled5.png)
         
 4. Diving into AP Comparison
     - Due to ResNet50's use of an FPN (Feature Pyramid Network) as the base architecture, it performs better on small and complex-shaped objects. In the table's `ResNet50 / VGG16` column, we can observe significantly higher accuracy for categories like bicycles and motorcycles.
