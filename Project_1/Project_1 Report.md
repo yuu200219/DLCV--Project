@@ -19,8 +19,8 @@ As a variant of Fast R-CNN, the introduction of the Region Proposal Network (RPN
 Following is the explanation about RPN and RoI Pooling.
 
 - **RPN**
-    
-    ![Untitled](md_img/Untitled1.png)
+
+![Untitled](md_img/Untitled1.png)
     
     - Initially, for each point on the feature map, 9 anchors (K=9) with different aspect ratios and scales are generated. Thus, the entire image will have width * height * K anchors. These anchors are then fed into the Region Proposal Network (RPN) for anchor prediction. This is done by applying a sliding window (a 3x3 convolutional filter) to each position on the feature map, computing the necessary predictions for each anchor at every location.
     - 會分成 classification 和 regression
@@ -45,31 +45,31 @@ Following is the explanation about RPN and RoI Pooling.
 
 - ResNet50
     
-    ![Untitled](md_img/Untitled3.png)
+![ResNet50](md_img/Untitled-3.png)
     
     - Basic Idea
         
-        ![[1512.03385.pdf (arxiv.org)](https://arxiv.org/pdf/1512.03385.pdf)](Project_1%20Report%203879b77c10c44de39534d30921ce429f/Untitled%202.png)
+![[1512.03385.pdf (arxiv.org)](https://arxiv.org/pdf/1512.03385.pdf)](md_img/Untitled-2.png)
         
-        [1512.03385.pdf (arxiv.org)](https://arxiv.org/pdf/1512.03385.pdf)
+[1512.03385.pdf (arxiv.org)](https://arxiv.org/pdf/1512.03385.pdf)
         
         To avoid gradient vanishing during deep learning, the idea of **Residual Mapping** is proposed. Suppose input is $x$, expected output is $H(x)$. Instead of directly mapping $H(x)$,  the approach transforms it into $F(x)=H(x)-x$, where find the minimum solution of $F(x)=0$ .  Thus, the equation turn into $H(x) = F(x) + x$.  This is called **Shortest Connections, we can get** $H(x)$ very easily and efficiently.
         
     - Bottleneck
         
-        ![[1512.03385.pdf (arxiv.org)](https://arxiv.org/pdf/1512.03385.pdf)](md_img/Untitled3)
+![[1512.03385.pdf (arxiv.org)](https://arxiv.org/pdf/1512.03385.pdf)](md_img/Untitled-3.png)
         
-        [1512.03385.pdf (arxiv.org)](https://arxiv.org/pdf/1512.03385.pdf)
+[1512.03385.pdf (arxiv.org)](https://arxiv.org/pdf/1512.03385.pdf)
         
         Since networks with more than 50 layers would require more time and resources, the Bottleneck technique was proposed to save a significant number of parameters. This technique involves using a 1x1 convolution to first reduce the dimensionality and then restore it, allowing the 3x3 convolution in the Bottleneck to process higher-dimensional inputs without needing to read as many parameters. This way, the Bottleneck block reduces computational cost while maintaining the ability to handle high-dimensional data effectively.
         
          
         
 - VGG16
+
+![[VGG-16 | CNN model for Classification and Detection - All about Machine Learning (techcraft.org)](https://blog.techcraft.org/vgg-16-cnn-model-for-classification-and-detection/)](md_img/Untitled-4.png)
     
-    ![[VGG-16 | CNN model for Classification and Detection - All about Machine Learning (techcraft.org)](https://blog.techcraft.org/vgg-16-cnn-model-for-classification-and-detection/)](md_img/Untitled4.png)
-    
-    [VGG-16 | CNN model for Classification and Detection - All about Machine Learning (techcraft.org)](https://blog.techcraft.org/vgg-16-cnn-model-for-classification-and-detection/)
+[VGG-16 | CNN model for Classification and Detection - All about Machine Learning (techcraft.org)](https://blog.techcraft.org/vgg-16-cnn-model-for-classification-and-detection/)
     
     The fatal defect of VGG
     
@@ -259,7 +259,7 @@ Several observations can be made:
     - For categories such as train, bus, and truck, the AP performance is poor.
     - Specifically, the AP for the train category is very low, likely due to the small number of train instances in the dataset. Conversely, the AP for cars is very high, indicating that cars appear frequently in the dataset. Overall, ResNet50 demonstrates significantly better AP across categories compared to VGG16.
         
-        ![Untitled](md_img/Untitled5.png)
+        ![Untitled](md_img/Untitled-5.png)
         
 4. Diving into AP Comparison
     - Due to ResNet50's use of an FPN (Feature Pyramid Network) as the base architecture, it performs better on small and complex-shaped objects. In the table's `ResNet50 / VGG16` column, we can observe significantly higher accuracy for categories like bicycles and motorcycles.
